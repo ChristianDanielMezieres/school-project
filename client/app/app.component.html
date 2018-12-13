@@ -1,0 +1,92 @@
+
+<nav class="navbar navbar-expand-lg navbar-background">
+  <a class="navbar-brand" href="#"><img class="logo" src="./assets/straps2.png"></a>
+  <button class="navbar-toggler bg-menu-nav" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars fa-1x bg-icon" aria-hidden="true"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item stay-focus ">
+        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          Accueil
+        </a>
+      </li>
+      <li class="nav-item stay-focus ">
+        <a routerLink="/admincards" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          Admincards
+        </a>
+      </li>
+      <li class="nav-item stay-focus ">
+        <a routerLink="/mentors" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          Mentors
+        </a>
+      </li>
+
+      <li class="nav-item stay-focus active">
+        <a [routerLink]= "['tarifs']" fragment="tarifs" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          Tarifs
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a routerLink="/" class="nav-link" routerLinkActive="active">
+          Contact
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/login" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+          <i class="fa fa-sign-in"></i> Connexion
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/account" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          <i class="fa fa-user"></i> Compte ({{auth.currentUser.username}})
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          <i class="fa fa-sign-out"></i> Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- background image -->
+<app-banner></app-banner>
+
+<!-- Image cards -->
+<app-cards></app-cards>
+
+<!-- left side menu -->
+<app-sidemenu></app-sidemenu>
+
+<!-- carousel -->
+<app-carousel></app-carousel>
+
+<!-- formulars -->
+<app-formular></app-formular>
+
+<!-- social network-->
+<app-socialnetwork></app-socialnetwork>
+
+<!-- social tarifs cards-->
+<app-about></app-about>
+
+<!-- contact -->
+<app-contact></app-contact>
+
+
+
+
+
+
+
+
+
+
+

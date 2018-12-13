@@ -1,0 +1,56 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+
+<!-- window left side open-->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a> 
+    <h1>Prendre Rendez-Vous avec votre mentor</h1>
+  <!-- research bar-->
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 search-bar">
+            <input class="search" type="text" placeholder="Chercher" [(ngModel)]='search'>
+            <button (click)="searchTowns()">
+              <i class="fa fa-search btn-bg-search" aria-hidden="false"></i>
+            </button>
+          
+        </div>
+      </div>
+  </div>
+<hr>
+  <!-- window list mentors-->
+
+<div class="container-fluid mx-auto">    
+    <div class="row" >          
+        <div class="card card-mentor" *ngFor="let mentor of mentors" style="width: 9rem;">           
+            <img class="card-img-top" src="api/file/{{ mentor.imageUrl }}" alt="Can't access">
+            <div class="card-body">
+                <h5 class="card-title">{{ mentor.name }}<br> {{ mentor.surname }}</h5><br>      
+                {{ mentor.age }} ans<br>
+                {{ mentor.level }}<br>
+                {{ mentor.town }}<br>
+                {{ mentor.zip }}<br>
+                <span class="verified" *ngIf='mentor.verified == "Verifié"'>{{ mentor.verified}}</span><br>
+                <span class="no-verified" *ngIf='mentor.verified != "Verifié"'>{{ mentor.verified}}</span><br>
+                
+            </div><br>
+            <button class="rdv-mentor">Rendez-vous</button>               
+        </div>       
+    </div>    
+</div> 
+  <!-- end window list teacher-->
+</div>
+<!-- end window left side open-->
+
+<!-- take appointment -->
+<div class="container-fluid bg-rendezvous">
+    <div class="row">
+        <div class="col-6 rendez-left">
+            <span class="rendezvous" style="cursor:pointer" (click)="openNav()"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i> Rendez-vous</span>
+        </div>
+        <div class="col-6 rendez-right">
+            <h3><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i><br>" Choisissez et réservez votre mentor "</h3>
+        </div>
+    </div>
+</div>
+<!-- end take appointment -->

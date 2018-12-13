@@ -1,0 +1,61 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="card" *ngIf="!isEditing">
+  <h4 class="card-header">Add new email</h4>
+  <div class="card-body">
+    <form class="form-inline" [formGroup]="addEmailForm" (ngSubmit)="addEmail()">
+      <input class="form-control mr-2" type="text" name="email_sender" formControlName="email_sender" placeholder="Votre email">
+      <input class="form-control mr-2" type="text" name="subject" formControlName="subject" placeholder="Sujet">
+      <input class="form-control mr-2" type="text" name="message" formControlName="message" placeholder="Votre message">
+      <button class="btn btn-primary" type="submit" [disabled]="!addEmailForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
+    </form>
+  </div>
+</div>
+
+<div class="card mb-3" *ngIf="!isLoading">
+  <h4 class="card-header">Current emails ({{ emails.length }})</h4>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Email_sender</th>
+          <th scope="col">Sujet</th>
+          <th scope="col">Message</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="emails.length === 0">
+        <tr>
+          <td colspan="4">There are no emails in the DB.</td>
+        </tr>  
+      </tbody>
+      <tbody *ngIf="!isEditing">
+        <tr *ngFor="let email of emails">
+          <td>{{ email.email_sender }}</td>
+          <td>{{ email.subject }}</td>
+          <td>{{ email.message }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" (click)="enableEditing(email)"><i class="fa fa-pencil"></i> Edit</button> 
+            <button class="btn btn-sm btn-danger" (click)="deleteEmail(email)"><i class="fa fa-trash"></i> Delete</button>
+          </td>
+        </tr>  
+      </tbody>
+      <tbody *ngIf="isEditing">
+        <tr>
+          <td colspan="4">
+            <form class="form-inline" #form="ngForm" (ngSubmit)="editEmail(email)">
+              <input class="form-control mr-2" type="text" name="email_sender" [(ngModel)]="email.email_sender" placeholder="Votre email" required>
+              <input class="form-control mr-2" type="text" name="subject" [(ngModel)]="email.subject" placeholder="Sujet" required>
+              <input class="form-control mr-2" type="text" name="message" [(ngModel)]="email.message" placeholder="Votre message" required>
+              <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
+              <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

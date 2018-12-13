@@ -1,0 +1,112 @@
+/* menu from left side */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    background-color: #2c3e50;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.rendezvous {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+/*-------  list images mentors --------------*/
+.card-mentor {
+    max-width: 250px;
+    border: 5px solid #ffffff;
+    border-radius: 8px;
+    background-color: #2c3e50;
+    margin: 5px;
+    padding: 1px;
+}
+
+/*-------  right rendez vous --------------*/
+.rendez-right {
+    background: none;
+    text-align: center;
+    padding-top: 5%;
+    color: #4dc4ae;
+  }
+
+.rendez-left {
+    padding-top: 4%;
+}
+
+.fa-calendar {
+    color: #2c3e50;
+}
+
+.card-body {
+    padding: 4px;
+}
+
+
+.rdv-mentor {
+    width: 100%;
+    margin-bottom: 5px;
+    border: 2px solid #4dc4ae;
+    background-color: #dedfde !important;
+    
+}
+
+.rdv-mentor:hover {
+    width: 100%;
+    margin-bottom: 5px;
+    border: 2px solid #fcfdfd;
+    background-color: #4dc4ae !important;
+    
+}
+
+/*-------  search bar --------------*/
+.search-bar {
+    width: 50%;
+    text-align: right;
+}
+.search {
+    width: 50%;
+    text-align: left;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+
+/*-------  Verified & no Verified --------------*/
+
+.verified {
+    color: #00a889;
+}
+
+.no-verified {
+    color: #fc0404;
+}

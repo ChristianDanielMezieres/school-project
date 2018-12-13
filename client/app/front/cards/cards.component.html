@@ -1,0 +1,23 @@
+<div class="container-fluid card-wrap">
+  <div class="row">
+    <div class="col-sm-3 card-group bg-cards" *ngFor="let admincard of admincards">
+      <div class="card cards-icon">
+        <div class="card-holder icon-center">
+          <i class="fa {{admincard.icon}} fa-4x" aria-hidden="true"></i>
+          <div class="overlay">
+            <div class="text">{{ admincard.title }}
+            </div>
+          </div>
+        </div>
+        <div class="card-body left-side">
+          <h5 class="card-title">{{ admincard.title }}</h5>
+          <p class="card-text">{{ admincard.text }}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{ admincard.foottext }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

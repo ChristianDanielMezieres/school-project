@@ -1,0 +1,120 @@
+
+<div class="container-fluid formular">
+  <div class="row pt-2 pb-2">
+    
+      <div class="col-sm-6 bg-users">       
+        
+        <div data-aos="fade-right">
+          <h3>Mentors <i class="fa fa-user fa-2x" aria-hidden="true"></i></h3>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-mentors" data-toggle="modal" data-target="#exampleModal">
+            S'inscrire à enseigner
+          </button>         
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade test" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header bgmodal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mentors</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="close">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body bgmodal-body">
+                <div class="card mx-auto" *ngIf="!isEditing">
+                  <h4 class="card-header bgcolor-header">S'enregistrer à enseigner</h4>
+                  <div class="card-body bgcolor-body">
+                    <form class="form-mentors" [formGroup]="addMentorForm" (ngSubmit)="addMentor()">
+                        <div class="row col-12">
+                            <div class="col-12 col-md-7" *ngIf="!filename" class="textUpload">télécharger</div>
+                            <div class="col-12 col-md-7" *ngIf="filename" class="textUpload">Image ajoutée</div>
+                            <app-upload class="col-12 col-md-5" [callback]="onFileUploaded"></app-upload>
+                        </div>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="name" formControlName="name" placeholder="Nom" required></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="surname" formControlName="surname" placeholder="prénom" required></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="number" name="age" formControlName="age" placeholder="Age" required></p>
+                      <p><input class="form-control mr-2" type="date"   name="date" formControlName="date" required></p>
+                      <p><select class="form-control mr-2 bgcolor-input" name="gender" formControlName="gender" required>
+                            <option  *ngFor="let gender of genders" [value]="gender.name">
+                               {{gender.name}}
+                            </option>
+                          </select></p>
+                         <p><select class="form-control mr-2 bgcolor-input"  name="level" formControlName="level"  required>
+                            <option *ngFor="let levelschol of levelschols" [ngValue]="levelschol.level" >
+                              {{levelschol.level}}
+                            </option>
+                          </select></p>
+                         <p><select class="form-control mr-2 bgcolor-input"  name="school" formControlName="school"  required>
+                            <option *ngFor="let nameschol of nameschols" [ngValue]="nameschol.name" >
+                              {{nameschol.name}}
+                            </option>
+                          </select></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="phone" formControlName="phone" placeholder="Téléphone"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="email" formControlName="email" placeholder="Email"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="address" formControlName="address" placeholder="Adresse"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="town" formControlName="town" placeholder="Ville"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="number" name="zip" formControlName="zip" placeholder="Zip"></p>
+                      <p><button class="btn btn-register bgcolor-button" type="submit" [disabled]="!addMentorForm.valid">S'inscrire</button></p>
+                    </form>
+                  </div>
+                  <div class="modal-footer bgmodal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                  </div>
+                </div>
+              </div>
+            </div>          
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-sm-6 bg-users">
+
+        <div data-aos="fade-left">
+          <h3><i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i> Etudiants</h3>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-students" data-toggle="modal" data-target="#exampleModalStudents">
+              S'inscrire à apprendre
+          </button>   
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade test" id="exampleModalStudents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header bgmodal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Etudiants</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body bgmodal-body">
+                <div class="card mx-auto" *ngIf="!isEditing">
+                  <h4 class="card-header bgcolor-header">S'enregistrer à apprendre</h4>
+                  <div class="card-body bgcolor-body">
+                    <form class="form-mentors" [formGroup]="addMentorForm" (ngSubmit)="addMentor()">
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="name" formControlName="name" placeholder="Nom"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="surname" formControlName="surname" placeholder="prénom"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="number" name="age" formControlName="age" placeholder="Age"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="level" formControlName="level" placeholder="Niveau scolaire"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="phone" formControlName="phone" placeholder="Téléphone"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="email" formControlName="email" placeholder="Email"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="address" formControlName="address" placeholder="Adresse"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="text" name="town" formControlName="town" placeholder="Ville"></p>
+                      <p><input class="form-control mr-2 bgcolor-input" type="number" name="zip" formControlName="zip" placeholder="Zip"></p>             
+                      <p><button class="btn btn-register bgcolor-button" type="submit" [disabled]="!addMentorForm.valid">S'inscrire</button></p>
+                    </form>
+                  </div>
+                  <div class="modal-footer bgmodal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                  </div>
+                </div>
+              </div>
+            </div>          
+          </div>
+        </div>
+      </div>
+    
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="card" *ngIf="!isEditing">
+    <h4 class="card-header">Ajout nouvelle Carte</h4>
+    <div class="card-body">
+      <form class="form-inline" [formGroup]="addAdmincardForm" (ngSubmit)="addAdmincard()">
+          <div class="row col-12">
+              <div class="col-12 col-md-7" *ngIf="!filename" class="textUpload">télécharger</div>
+              <div class="col-12 col-md-7" *ngIf="filename" class="textUpload">Image ajoutée</div>
+              <app-upload class="col-12 col-md-5" [callback]="onFileUploaded"></app-upload>
+          </div>
+       
+        <input class="form-control mr-2" type="text" name="icon" formControlName="icon" placeholder="icon">
+        <input class="form-control mr-2" type="text" name="title" formControlName="title" placeholder="title">
+        <input class="form-control mr-2" type="text" name="text" formControlName="text" placeholder="text">
+        <input class="form-control mr-2" type="text" name="foottext" formControlName="foottext" placeholder="foottext">
+        <button class="btn btn-primary" type="submit" [disabled]="!addAdmincardForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
+      </form>
+    </div>
+  </div>
+
+
+<div class="card mb-3" *ngIf="!isLoading">
+  <h4 class="card-header">Cartes ({{ admincards.length }})</h4>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Images</th>
+          <th scope="col">Icons</th>
+          <th scope="col">Titles</th>
+          <th scope="col">texts</th>
+          <th scope="col">foottexts</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="admincards.length === 0">
+        <tr>
+          <td colspan="4">There are no admincards in the DB. Add a new admincard below.</td>
+        </tr>  
+      </tbody>
+      <tbody *ngIf="!isEditing">
+        <tr *ngFor="let admincard of admincards">
+          <td><img class="imageUrl" src="api/file/{{ admincard.imageUrl }}" alt="Can't access"></td>
+          <td>{{ admincard.icon }}</td>
+          <td>{{ admincard.title }}</td>
+          <td>{{ admincard.text }}</td>
+          <td>{{ admincard.foottext }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" (click)="enableEditing(admincard)"><i class="fa fa-pencil"></i></button> 
+            <button class="btn btn-sm btn-danger" (click)="deleteAdmincard(admincard)"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>  
+      </tbody>
+      <tbody *ngIf="isEditing">
+        <tr>
+          <td colspan="4">
+            <form class="form-inline editcards" #form="ngForm" (ngSubmit)="editAdmincard(admincard)">
+                <div class="row col-12">
+                    <div class="col-12 col-md-7" *ngIf="!filename" class="textUpload">télécharger</div>
+                    <div class="col-12 col-md-7" *ngIf="filename" class="textUpload">Image ajoutée</div>
+                    <app-upload class="col-12 col-md-5" [callback]="onFileUploaded"></app-upload>
+                </div>
+              <!-- <input class="form-control mr-2" type="text" name="imageUrl" [(ngModel)]="admincard.imageUrl"> -->
+              <img class="imageUrl" src="api/file/{{ admincard.imageUrl }}" alt="Can't access">
+              <input class="form-control mr-2" type="text" name="icon" [(ngModel)]="admincard.icon" placeholder="icon">
+              <input class="form-control mr-2" type="text" name="title" [(ngModel)]="admincard.title" placeholder="title">
+              <input class="form-control mr-2" type="text" name="text" [(ngModel)]="admincard.text" placeholder="text">
+              <input class="form-control mr-2" type="text" name="foottext" [(ngModel)]="admincard.foottext" placeholder="foottext">
+              <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i></button>
+              <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i></button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+

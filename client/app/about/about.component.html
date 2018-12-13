@@ -1,0 +1,19 @@
+
+<h3 class="title-tarifs">- Nos Plans Tarifs -</h3>
+
+<div class="container-fluid bg-tarif">
+  <div class="row">
+    <div class="col-sm-3 card tarif-card mx-auto" *ngFor="let tarif of tarifs">
+      <div class="card">
+        <div class="card-holder icon-center">
+            <div class="text title-tarif"><h2>{{ tarif.plan }}</h2></div>
+        </div>
+        <div class="card-body card-body-tarif  left-side">
+          <h5 class="card-title price-monthly">{{ tarif.price }}€ par mois</h5>
+          <hr>
+          <p class="card-text tarif-description">{{ tarif.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
