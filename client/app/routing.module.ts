@@ -6,9 +6,10 @@ import { MentorsComponent } from './mentors/mentors.component';
 import { StudentsComponent } from './students/students.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { SocialnetworkComponent } from './front/socialnetwork/socialnetwork.component';
+import { BannerComponent } from './front/banner/banner.component';
 import { AdmincardsComponent } from './admincards/admincards.component';
 import { UploadComponent } from './upload/upload.component';
-import { AboutComponent } from './about/about.component';
+
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -20,7 +21,7 @@ import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent },
+
   { path: 'cats', component: CatsComponent },
   { path: 'mentors', component: MentorsComponent },
   { path: 'students', component: StudentsComponent },
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
   { path: 'notfound', component: NotFoundComponent },
-  { path: '**', redirectTo: '/notfound' },
+
+
 ];
 
 @NgModule({

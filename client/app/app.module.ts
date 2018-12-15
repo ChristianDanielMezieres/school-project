@@ -36,6 +36,7 @@ import { StudentsComponent } from './students/students.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { TarifService } from './services/tarif.service';
 
+
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
