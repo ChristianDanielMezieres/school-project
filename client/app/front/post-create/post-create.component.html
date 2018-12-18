@@ -1,6 +1,10 @@
 
-
-<textarea row=6 [(ngModel)]="commentValue" ></textarea>
+<mat-card>
+  <mat-form-field>
+    <textarea matInput row="6" [(ngModel)]="commentValue" ></textarea>
+  </mat-form-field>
+  <button mat-raised-button  color="accent" (click)="onAddPost()">Ajout</button>
+</mat-card>
 <hr>
-<button (click)="onAddPost()">Ajout</button>
+
 <p>{{newPost}}</p>

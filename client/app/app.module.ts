@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FormsModule } from '@angular/forms';
 import { RoutingModule } from './routing.module';
@@ -36,6 +37,7 @@ import { StudentsComponent } from './students/students.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { TarifService } from './services/tarif.service';
 import { PostCreateComponent } from './front/post-create/post-create.component';
+import { MatInputModule, MatCardModule, MatButtonModule } from '@angular/material';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -70,6 +72,9 @@ export function tokenGetter() {
   ],
   imports: [
     RoutingModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
     SharedModule,
     FormsModule,
     JwtModule.forRoot({
@@ -78,6 +83,7 @@ export function tokenGetter() {
         // whitelistedDomains: ['localhost:3000', 'localhost:4200']
       },
     }),
+    BrowserAnimationsModule,
   ],
   providers: [
     AuthService,
