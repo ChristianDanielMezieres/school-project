@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
-
+import { FormsModule } from '@angular/forms';
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CatService } from './services/cat.service';
@@ -35,6 +35,7 @@ import { MentorsComponent } from './mentors/mentors.component';
 import { StudentsComponent } from './students/students.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { TarifService } from './services/tarif.service';
+import { PostCreateComponent } from './front/post-create/post-create.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -56,6 +57,7 @@ export function tokenGetter() {
     BannerComponent,
     CarouselComponent,
     SocialnetworkComponent,
+    PostCreateComponent,
     ContactComponent,
     CardsComponent,
     SidemenuComponent,
@@ -69,6 +71,7 @@ export function tokenGetter() {
   imports: [
     RoutingModule,
     SharedModule,
+    FormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,

@@ -22,7 +22,11 @@
           Mentors
         </a>
       </li>
-
+      <li class="nav-item stay-focus ">
+        <a routerLink="/" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          Comments
+        </a>
+      </li>
       <li class="nav-item stay-focus active">
         <a [routerLink]= "['tarifs']" fragment="tarifs" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
           Tarifs
@@ -71,11 +75,14 @@
 <!-- formulars -->
 <app-formular></app-formular>
 
-<!-- social network-->
+<!-- social network -->
 <app-socialnetwork></app-socialnetwork>
 
-<!-- social tarifs cards-->
+<!-- social tarifs cards -->
 <app-about></app-about>
+
+<!-- Comments -->
+<app-post-create></app-post-create>
 
 <!-- contact -->
 <app-contact></app-contact>

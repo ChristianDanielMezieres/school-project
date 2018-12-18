@@ -3,7 +3,7 @@
   <div class="row">
     <div class="card-body contact-body ">
       <form class="form-email" [formGroup]="addEmailForm" (ngSubmit)="addEmail()">
-        <input class="form-control mr-2" type="text" name="email_sender" formControlName="email_sender" placeholder="Votre email">
+        <input class="form-control mr-2" type="text" name="emailSender" formControlName="emailSender" placeholder="Votre email">
         <input class="form-control mr-2" type="text" name="subject" formControlName="subject" placeholder="Sujet">
         <textarea class="form-control mr-2" type="text" name="message" formControlName="message" placeholder="votre message" ></textarea>
         <button class="btn btn-send" type="submit" [disabled]="!addEmailForm.valid"> Envoyer</button>

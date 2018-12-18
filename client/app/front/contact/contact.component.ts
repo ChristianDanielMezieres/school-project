@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
   isEditing = false;
 
   addEmailForm: FormGroup;
-  email_sender = new FormControl('', Validators.required);
+  emailSender = new FormControl('', Validators.required);
   subject = new FormControl('', Validators.required);
   message = new FormControl('', Validators.required);
 
@@ -27,9 +27,9 @@ export class ContactComponent implements OnInit {
               public toast: ToastComponent) { }
 
   ngOnInit() {
-    
+
     this.addEmailForm = this.formBuilder.group({
-      email_sender: this.email_sender,
+      emailSender: this.emailSender,
       subject: this.subject,
       message: this.message,
     });
@@ -45,7 +45,5 @@ export class ContactComponent implements OnInit {
       error => console.log(error),
     );
   }
-
-  
 
 }

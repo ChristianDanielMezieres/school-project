@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'students', component: StudentsComponent },
   { path: 'tarifs', component: TarifsComponent },
   { path: 'socialnetwork', component: SocialnetworkComponent },
+  { path: 'post-create', component: TarifsComponent },
   { path: 'upload', component: UploadComponent },
   { path: 'admincards', component: AdmincardsComponent },
   { path: 'register', component: RegisterComponent },
