@@ -51,11 +51,15 @@ Latest version 4+ of Webpack :
 - npm install webpack@latest --save-dev
 
 ----------- then -----------
+
 step 2
+
 rename your folder " proxy.config.json " to " proxy.conf.json "
 ----------- then -------------------
+
 step 3 
 change the path in " package.json " the line with " ng serve nproxy.config.json --open " with " ng serve --proxy-config proxy.conf.json -o "
 
 then you can run " yarn dev "
+
 ----------- End upgrade angular 5.2.0 to angular 7.1.3 ----
