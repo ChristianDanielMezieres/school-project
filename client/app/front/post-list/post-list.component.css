@@ -1,0 +1,16 @@
+
+main{
+  width: 80%;
+  min-width: 400px;
+  margin: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+mat-expansion-panel {
+  background-color: #2c3e50;
+}
+
+.info-text-comment {
+  text-align: left;
+}

@@ -37,7 +37,8 @@ import { StudentsComponent } from './students/students.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { TarifService } from './services/tarif.service';
 import { PostCreateComponent } from './front/post-create/post-create.component';
-import { MatInputModule, MatCardModule, MatButtonModule } from '@angular/material';
+import { PostListComponent } from './front/post-list/post-list.component';
+import { MatInputModule, MatCardModule, MatButtonModule, MatExpansionModule } from '@angular/material';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -60,6 +61,7 @@ export function tokenGetter() {
     CarouselComponent,
     SocialnetworkComponent,
     PostCreateComponent,
+    PostListComponent,
     ContactComponent,
     CardsComponent,
     SidemenuComponent,
@@ -75,6 +77,7 @@ export function tokenGetter() {
     MatInputModule,
     MatCardModule,
     MatButtonModule,
+    MatExpansionModule,
     SharedModule,
     FormsModule,
     JwtModule.forRoot({
