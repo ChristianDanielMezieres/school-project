@@ -8,8 +8,13 @@ main{
 }
 
 mat-expansion-panel {
-  background-color: #ffffff;
-  color: #2c3e50;
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+mat-expansion-panel-header {
+  background-color: #2c3e50;
+  color: #4dc4ae;
 }
 
 .info-text-comment {

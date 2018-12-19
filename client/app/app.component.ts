@@ -1,5 +1,6 @@
 import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { Post } from './front/post.model';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,9 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements AfterViewChecked {
 
-  storedPosts = [];
+  storedPosts: Post[] = [];
 
-  onPostAdded(post: any) {
+  onPostAdded(post) {
     this.storedPosts.push(post);
   }
 
