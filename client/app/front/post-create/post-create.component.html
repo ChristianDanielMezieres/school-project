@@ -1,13 +1,17 @@
 
 <mat-card>
-  <mat-form-field>
-    <input matInput type="text" [(ngModel)]="commentTitle">
-  </mat-form-field>
-  <mat-form-field>
-    <textarea matInput row="6" [(ngModel)]="commentPosted" ></textarea>
-  </mat-form-field>
-  <br>
-  <button mat-raised-button  color="accent" (click)="onAddPost()">Ajout</button>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input matInput type="text" name="title" ngModel required #title="ngModel">
+      <mat-error *ngIf="title.invalid">Entrer un titre</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput row="6" name="description" ngModel required #description="ngModel"></textarea>
+      <mat-error *ngIf="description.invalid">Entrer une description</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="accent" type="submit">Ajout</button>
+  </form>
 </mat-card>
 <hr>
 
