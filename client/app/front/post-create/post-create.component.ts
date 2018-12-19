@@ -9,9 +9,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 )
 
 export class PostCreateComponent {
+  @Ouput() postCreated = new EventEmitter();
   commentTitle = '';
   commentPosted = '';
-  @Ouput() postCreated = new EventEmitter();
 
   onAddPost() {
     const post = {
