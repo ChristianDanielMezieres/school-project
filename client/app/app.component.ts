@@ -7,6 +7,12 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements AfterViewChecked {
 
+  storedPosts = [];
+
+  onPostAdded(post: any) {
+    this.storedPosts.push(post);
+  }
+
   constructor(public auth: AuthService,
               private changeDetector: ChangeDetectorRef) { }
 
