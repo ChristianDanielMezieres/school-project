@@ -10,7 +10,7 @@ setup upload file image for presentation cards (dynamic) setup fields for mentor
 Interface, navbar, carousel, modal, cards, emailer.
 
 
---------------- Upgrade Angular cli 5.2.0 to Angular 7 ------------
+----------- Upgrade Angular cli 5.2.0 to Angular 7 ----
 
 First, step 1 : go to your folder and remove node_modules ( do not remove from your Editor VSCode), this allows not to block your editor.
 
@@ -50,12 +50,17 @@ Latest version 4+ of Webpack :
 
 - npm install webpack@latest --save-dev
 
---------------------------------------- then --------------------
+----------- then -----------
+
 step 2
-rename your folder " proxy.config.json " to " proxy.config.json "
----------------------------------------- then -------------------
+
+rename your folder " proxy.config.json " to " proxy.conf.json "
+
+----------- then -------------------
+
 step 3 
-change the path in " package.json " the line with " ng serve nproxy.conf.json --open " with " ng serve --proxy-config proxy.conf.json -o "
+change the path in " package.json " the line with " ng serve nproxy.config.json --open " with " ng serve --proxy-config proxy.conf.json -o "
 
 then you can run " yarn dev "
------------------------------------------ End upgrade angular 5.2.0 to angular 7.1.3 -------------------------------------------
+
+----------- End upgrade angular 5.2.0 to angular 7.1.3 ----
