@@ -55,6 +55,7 @@ Latest version 4+ of Webpack :
 step 2
 
 rename your folder " proxy.config.json " to " proxy.conf.json "
+
 ----------- then -------------------
 
 step 3 
