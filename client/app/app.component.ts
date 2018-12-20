@@ -10,7 +10,7 @@ export class AppComponent implements AfterViewChecked {
 
   storedPosts: Post[] = [];
 
-  onPostAdded(post) {
+  onPostAdded(post: any) {
     this.storedPosts.push(post);
   }
 

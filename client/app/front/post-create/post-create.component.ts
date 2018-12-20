@@ -18,8 +18,8 @@ export class PostCreateComponent {
       return;
     }
     const post: Post = {
-      title: form.value.title,
-      description: form.value.description,
+      title: this.commentTitle,
+      description: this.commentPosted,
     };
     this.postCreated.emit(post);
   }
