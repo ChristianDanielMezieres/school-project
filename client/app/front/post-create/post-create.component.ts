@@ -19,5 +19,6 @@ export class PostCreateComponent {
       return;
     }
     this.postsService.addPost(this.commentTitle, this.commentPosted);
+    form.reset();
   }
 }
