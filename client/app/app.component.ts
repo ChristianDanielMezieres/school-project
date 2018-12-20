@@ -1,18 +1,11 @@
 import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Post } from './front/post.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent implements AfterViewChecked {
-
-  storedPosts: Post[] = [];
-
-  onPostAdded(post: any) {
-    this.storedPosts.push(post);
-  }
 
   constructor(public auth: AuthService,
               private changeDetector: ChangeDetectorRef) { }
