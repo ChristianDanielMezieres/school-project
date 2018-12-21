@@ -66,7 +66,6 @@ export default function routes(app) {
   router.route('/upload').post(upload.upload);
   router.route('/file/:filename').get(upload.getFile);
 
-
   // admincards
   router.route('/admincards').get(admincard.getAll);
   router.route('/admincards/count').get(admincard.count);

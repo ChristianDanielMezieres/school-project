@@ -1,13 +1,14 @@
 
 .formular {
-	
-    background-image: -webkit-linear-gradient(30deg, #2c3e50 50%, #4dc4ae 50%);
+
+  background-image: -webkit-linear-gradient(30deg, #2c3e50 50%, #4dc4ae 50%);
 	border-top: 1px solid #ffffff;
-    color: #ffffff;
-    overflow: hidden;
+  color: #ffffff;
+  overflow: hidden;
 	padding: 20px 0 20px 0;
 	min-height: 300px;
 }
+
 
 .fa-2x {
     color: #ffffff;
@@ -76,10 +77,10 @@
 	min-height: 500px;
 	background-color: #2c3e50;
   }
-  
-  
-  
-  
+
+
+
+
   /*form styles*/
   #msform {
 	  width: 400px;
@@ -93,11 +94,11 @@
 	  border-radius: 3px;
 	  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	  padding: 20px 30px;
-	  
+
 	  box-sizing: border-box;
 	  width: 80%;
 	  margin: 0 10%;
-	  
+
 	  /*stacking fieldsets above each other*/
 	  position: absolute;
   }
@@ -186,7 +187,7 @@
   }
   #progressbar li:first-child:after {
 	  /*connector not needed before the first step*/
-	  content: none; 
+	  content: none;
   }
   /*marking active/completed steps green*/
   /*The number of the step and the connector before it = green*/
