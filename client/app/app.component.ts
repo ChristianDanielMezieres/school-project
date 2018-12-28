@@ -1,5 +1,6 @@
 import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { Post } from './front/post.model';
 
 @Component({
   selector: 'app-root',
