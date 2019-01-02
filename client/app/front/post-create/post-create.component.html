@@ -1,6 +1,6 @@
 <h3 class="title-contact">- Vos Commentaires -</h3>
 <mat-card>
-  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+  <form (submit)="onSavePost(postForm)" #postForm="ngForm">
     <mat-form-field>
       <input matInput type="text" name="title" ngModel placeholder="votre nom" required #title="ngModel">
       <mat-error *ngIf="title.invalid">Entrer un titre</mat-error>

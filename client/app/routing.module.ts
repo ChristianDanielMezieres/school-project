@@ -15,6 +15,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PostListComponent } from './front/post-list/post-list.component';
+import { PostCreateComponent } from './front/post-create/post-create.component';
 
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
@@ -22,6 +24,7 @@ import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 const routes: Routes = [
   { path: 'cats', component: CatsComponent },
   { path: 'mentors', component: MentorsComponent },
+  { path: 'create', component: PostCreateComponent },
   { path: 'students', component: StudentsComponent },
   { path: 'tarifs', component: TarifsComponent },
   { path: 'socialnetwork', component: SocialnetworkComponent },
