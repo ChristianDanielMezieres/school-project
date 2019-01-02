@@ -23,6 +23,11 @@
         </a>
       </li>
       <li class="nav-item stay-focus ">
+        <a routerLink="/students" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          Students
+        </a>
+      </li>
+      <li class="nav-item stay-focus ">
         <a routerLink="/" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
           Comments
         </a>
