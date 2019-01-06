@@ -1,6 +1,23 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const Post = require('./models/post');
 const app = express();
+const mongoose = require('mongoose');
+//const postsRoutes = require("./routes/posts");
+
+
+mongoose
+  .connect(
+    "mongodb+srv://chrys:Gaelen08.@cluster0-wqts6.mongodb.net/test?retryWrites=true"
+  )
+  .then(() => {
+    console.log("Connected to database!")
+  })
+  .catch(() => {
+    console.log("Connection failed!");
+  });
+
+
 
 app.use(bodyParser.json());
 
@@ -12,13 +29,16 @@ app.get((req, res, next) => {
                 "Origin, X-Requested-With, Content-Type, Accept"
   );
   res.setHeader("Access-Control-Allow-Methods",
-                "GET, POST, PATCH, DELETE, OPTIONS"
+                "GET, POST, PATCH, PUT, DELETE, OPTIONS"
   );
   next();
 });
 
 app.post("/api/posts", (req, res, next) => {
-  const posts= req.body;
+  const post = new Post({
+    title: req.body.title,
+    description: req.body.decription,
+  });
   console.log(post);
   res.status(201).json({
     message: 'post added successfully'
@@ -46,6 +66,7 @@ app.use("/api/posts", (req, res, next) => {
     posts: posts
   });
 });
+
 
 
 

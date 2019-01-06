@@ -13,6 +13,7 @@ export class PostListComponent implements OnInit, OnDestroy {
 //   posts = [
 //     { title: 'first post', content: 'this is my first content from my post' },
 //     { title: 'second post', content: 'this is my second content from my post' },
+//       { title: 'second post', content: 'this is my second content from my post' },
 //   ];
 
   posts: Post[] = [];
