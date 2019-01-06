@@ -5,10 +5,10 @@ const app = express();
 const mongoose = require('mongoose');
 //const postsRoutes = require("./routes/posts");
 
-
+// connect to dabase mongodb with mongoose
 mongoose
   .connect(
-    "mongodb+srv://chrys:Gaelen08.@cluster0-wqts6.mongodb.net/test?retryWrites=true"
+    "mongodb+srv://chrys:Gaelen08.@cluster0-wqts6.mongodb.net/node-angular?retryWrites=true"
   )
   .then(() => {
     console.log("Connected to database!")
@@ -37,11 +37,11 @@ app.get((req, res, next) => {
 app.post("/api/posts", (req, res, next) => {
   const post = new Post({
     title: req.body.title,
-    description: req.body.decription,
+    description: req.body.decription
   });
-  console.log(post);
+  post.save();
   res.status(201).json({
-    message: 'post added successfully'
+    message: "post added successfully"
   });
 });
 
