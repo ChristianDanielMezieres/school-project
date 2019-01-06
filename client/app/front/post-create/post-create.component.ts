@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { PostsService } from '../../services/posts.service';
-import { Post } from '../../../../server/models/post.model';
+import { PostsService } from '../posts.service';
+import { Post } from '../post.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({

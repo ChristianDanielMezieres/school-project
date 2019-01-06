@@ -1,4 +1,4 @@
-import { Post } from '../../../server/models/post.model';
+import { Post } from './post.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
@@ -14,7 +14,7 @@ export class PostsService {
 
   getPosts() {
     this.http
-      .get<{ message: string; posts: any }>('http://localhost:3000/api/posts')
+      .get<{ message: string; posts: any }>('http://localhost:3080/api/posts')
       .pipe(
         map((postData) => {
           return postData.posts.map((post) => {
@@ -38,7 +38,7 @@ export class PostsService {
 
   getPost(id: string) {
     return this.http.get<{ _id: string; title: string; description: string }>(
-      'http://localhost:3000/api/posts/' + id,
+      'http://localhost:3080/api/posts/' + id,
     );
   }
 
@@ -46,7 +46,7 @@ export class PostsService {
     const post: Post = { id: null, title: title, description: description };
     this.http
       .post<{ message: string; postId: string }>(
-        'http://localhost:3000/api/posts',
+        'http://localhost:3080/api/posts',
         post,
       )
       .subscribe((responseData) => {
@@ -61,7 +61,7 @@ export class PostsService {
   updatePost(id: string, title: string, description: string) {
     const post: Post = { id: id, title: title, description: description };
     this.http
-      .put('http://localhost:3000/api/posts/' + id, post)
+      .put('http://localhost:3080/api/posts/' + id, post)
       .subscribe((response) => {
         const updatedPosts = [...this.posts];
         const oldPostIndex = updatedPosts.findIndex(p => p.id === post.id);
@@ -74,7 +74,7 @@ export class PostsService {
 
   deletePost(postId: string) {
     this.http
-      .delete('http://localhost:3000/api/posts/' + postId)
+      .delete('http://localhost:3080/api/posts/' + postId)
       .subscribe(() => {
         const updatedPosts = this.posts.filter(post => post.id !== postId);
         this.posts = updatedPosts;

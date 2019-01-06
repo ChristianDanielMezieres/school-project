@@ -1,6 +1,6 @@
 import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Post } from '../../server/models/post.model';
+import { Post } from './front/post.model';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
