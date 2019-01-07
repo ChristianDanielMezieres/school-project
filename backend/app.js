@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 // connect to dabase mongodb with mongoose
 mongoose
   .connect(
-    "mongodb+srv://chrys:Gaelen08.@cluster0-wqts6.mongodb.net/node-angular?retryWrites=true"
+    "mongodb+srv://chrys:Gaelen08.@cluster0-wqts6.mongodb.net/node-angular?retryWrites=true", { useNewUrlParser: true }
   )
   .then(() => {
     console.log("Connected to database!")
