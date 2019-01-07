@@ -37,7 +37,7 @@ app.get((req, res, next) => {
 app.post("/api/posts", (req, res, next) => {
   const post = new Post({
     title: req.body.title,
-    description: req.body.decription
+    description: req.body.description
   });
   post.save();
   res.status(201).json({
