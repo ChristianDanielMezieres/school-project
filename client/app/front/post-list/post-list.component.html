@@ -7,6 +7,10 @@
       {{ post.title }}
     </mat-expansion-panel-header>
       <p>{{ post.description }}</p>
+      <mat-action-row>
+        <button mat-button color="primary">Edit</button>
+        <button mat-button color="warn" (click)="onDelete(post.id)">Delete</button>
+      </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
   <p class ="info-text-comment mat-body-1" *ngIf="posts.length <= 0 ">Pas de commentaire posté.</p>
