@@ -14,7 +14,7 @@ mongoose
     console.log("Connected to database!")
   })
   .catch(() => {
-    console.log("Connection failed!");
+    console.log("What the hell Connection failed!");
   });
 
 

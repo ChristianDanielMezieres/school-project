@@ -20,3 +20,22 @@ mat-expansion-panel-header {
 .info-text-comment {
   text-align: left;
 }
+
+.del-button {
+  color: #ffffff;
+  border-radius: 4px;
+  background-color: #4dc4ae;
+  width: 80px;
+  border: 1px solid #ffffff;
+}
+
+.del-button:hover {
+  background-color: #3eaf9a;
+}
+
+.edit-button {
+  color: #ffffff;
+  background-color: #354a5e;
+  width: 80px;
+  border: 1px solid #ffffff;
+}
