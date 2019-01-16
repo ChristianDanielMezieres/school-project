@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'cats', component: CatsComponent },
   { path: 'mentors', component: MentorsComponent },
   { path: 'create', component: PostCreateComponent },
+  { path: 'edit/:postId', component: PostCreateComponent },
   { path: 'students', component: StudentsComponent },
   { path: 'tarifs', component: TarifsComponent },
   { path: 'socialnetwork', component: SocialnetworkComponent },

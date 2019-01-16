@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const Post = require('./models/post');
 const app = express();
 const mongoose = require('mongoose');
-//const postsRoutes = require("./routes/posts");
+const postsRoutes = require("./routes/routes");
 
 // connect to dabase mongodb with mongoose
 mongoose
@@ -47,6 +47,17 @@ app.post("/api/posts", (req, res, next) => {
   });
 });
 
+app.put("/api/posts/:id", (req, res, next) => {
+  const post = new Post({
+    _id: req.body.id,
+    title: req.boby.title,
+    description: req.body.description
+  });
+  Post.updateOne({ _id: req.params.id }, post).then(result => {
+    res.status(200).json({ message: 'Update successfull!' });
+  });
+});
+
 app.get("/api/posts", (req, res, next) => {
   // API posts comments
   Post.find().then(documents => {
@@ -57,11 +68,25 @@ app.get("/api/posts", (req, res, next) => {
   });
 });
 
+app.get("/api/posts/:id", (req,res, next) => {
+  Post.findById(req.params.id).then(post => {
+    if(post) {
+      res.status(200).json(post);
+      } else {
+       res.status(404).json({
+         message: 'Post not found'
+       });
+     }
+   });
+ });
+
 app.delete("/api/posts/:id", (req, res, next) => {
   Post.deleteOne({ _id: req.params.id }).then(result => {
     console.log(result);
   });
   res.status(200).json({message: "Post deleted"});
 });
+
+app.use(postsRoutes);//
 
 module.exports = app;

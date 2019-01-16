@@ -8,8 +8,8 @@
     </mat-expansion-panel-header>
       <p>{{ post.description }}</p>
       <mat-action-row>
-        <button mat-button class="edit-button">Edit</button>
-        <button mat-button class="del-button" (click)="onDelete(post.id)">Delete</button>
+        <button mat-button class="edit-button" [routerLink]="['/edit', post.id]"><i class="far fa-edit"></i></button>
+        <button mat-button class="del-button" (click)="onDelete(post.id)"><i class="fas fa-trash-alt"></i></button>
       </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
