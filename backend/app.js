@@ -50,7 +50,7 @@ app.post("/api/posts", (req, res, next) => {
  app.put("/api/posts/:id", (req, res, next) => {
    const post = new Post({
      _id: req.body.id,
-     
+     //title: req.boby.title, //issue with title update
      description: req.body.description,
    });
    Post.updateOne({ _id: req.params.id }, post).then(result => {
@@ -75,7 +75,7 @@ app.get("/api/posts/:id", (req,res, next) => {
       res.status(200).json(post);
       } else {
        res.status(404).json({
-         message: 'Chrys Post not found'
+         message: 'Post not found'
        });
      }
    });
@@ -89,6 +89,6 @@ app.delete("/api/posts/:id", (req, res, next) => {
   res.status(200).json({message: "Post deleted"});
 });
 
-app.use(postsRoutes);//
+app.use('/api/posts', postsRoutes);
 
 module.exports = app;
