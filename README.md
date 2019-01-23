@@ -64,3 +64,11 @@ change the path in " package.json " the line with " ng serve nproxy.config.json 
 then you can run " yarn dev "
 
 ----------- End upgrade angular 5.2.0 to angular 7.1.3 ----
+
+to run as test
+
+run yarn with : yarn dev 
+
+open another terminal and run the other backend part
+
+npm run start:server

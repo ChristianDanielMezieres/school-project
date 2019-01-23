@@ -14,7 +14,6 @@ export class PostCreateComponent implements OnInit {
   commentTitle = '';
   commentPosted = '';
   post: Post;
-  isLoading = false;
   private mode = 'create';
   private postId: string;
 
