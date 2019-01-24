@@ -42,7 +42,7 @@ export class PostsService {
   }
 
   addPost(title: string, description: string) {
-    const post: Post = { id: null, title: title, description: description };
+    const post: Post = { id: null, title: 'title', description: 'description' };
     this.http
       .post<{ message: string; postId: string }>(
         'http://localhost:3080/api/posts',
@@ -57,7 +57,7 @@ export class PostsService {
   }
 
   updatePost(id: string, title: string, description: string) {
-    const post: Post = { id: id, title: title, description: description };
+    const post: Post = { id, title, description };
     this.http
       .put('http://localhost:3080/api/posts/' + id, post)
       .subscribe((response) => {

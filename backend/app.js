@@ -50,7 +50,7 @@ app.post("/api/posts", (req, res, next) => {
  app.put("/api/posts/:id", (req, res, next) => {
    const post = new Post({
      _id: req.body.id,
-     //title: req.boby.title, //issue with title update
+     title: req.body.title, //issue with title update solved
      description: req.body.description,
    });
    Post.updateOne({ _id: req.params.id }, post).then(result => {
