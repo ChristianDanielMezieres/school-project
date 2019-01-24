@@ -13,5 +13,5 @@
       </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-  <p class ="info-text-comment mat-body-1" *ngIf="posts.length <= 0 ">Pas de commentaire posté.</p>
+  <p class ="info-text-comment mat-body-1" *ngIf="posts.length <= 0 && !isLoading ">Pas de commentaire posté.</p>
 </main>

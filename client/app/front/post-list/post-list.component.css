@@ -39,3 +39,7 @@ mat-expansion-panel-header {
   width: 80px;
   border: 1px solid #ffffff;
 }
+
+mat-spinner{
+  margin: auto;
+}

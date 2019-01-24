@@ -38,7 +38,12 @@ import { TarifsComponent } from './tarifs/tarifs.component';
 import { TarifService } from './services/tarif.service';
 import { PostCreateComponent } from './front/post-create/post-create.component';
 import { PostListComponent } from './front/post-list/post-list.component';
-import { MatInputModule, MatCardModule, MatButtonModule, MatExpansionModule, MatToolbarModule } from '@angular/material';
+import { MatInputModule,
+        MatCardModule,
+        MatButtonModule,
+        MatExpansionModule,
+        MatToolbarModule,
+        MatProgressSpinnerModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -81,6 +86,7 @@ export function tokenGetter() {
     MatButtonModule,
     MatExpansionModule,
     MatToolbarModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     BrowserModule,
     SharedModule,

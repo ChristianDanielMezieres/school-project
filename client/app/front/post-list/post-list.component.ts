@@ -23,8 +23,11 @@ export class PostListComponent implements OnInit, OnDestroy {
   constructor(public postsService: PostsService) {}
 
   ngOnInit() {
+    // loading appears at the beginning loading at the page
+    this.isLoading = true;
     this.postsService.getPosts();
     this.postsSub = this.postsService.getPostsUpdatedListener().subscribe((posts: Post[]) => {
+      // finished loading after updating comments
       this.isLoading = false;
       this.posts = posts;
     });
