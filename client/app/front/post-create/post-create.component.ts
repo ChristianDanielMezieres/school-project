@@ -44,7 +44,7 @@ export class PostCreateComponent implements OnInit {
       return;
     }
     // start loading
-    this.isLoading = true;
+    // this.isLoading = true;
     if (this.mode === 'create') {
       this.postsService.addPost(form.value.title, form.value.description);
     } else {
@@ -55,6 +55,7 @@ export class PostCreateComponent implements OnInit {
         form.value.description,
       );
     }
+    // this.isLoading = false;
     form.resetForm();
   }
 }

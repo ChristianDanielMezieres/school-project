@@ -79,6 +79,13 @@ li.nav-item a {
   padding-top: 20px;
 }
 
+.btn-login {
+  background-color: #2c3e50;
+  color: #ffffff;
+  margin-top: 10px;
+  min-width: 150px;
+}
+
 @media only screen and (max-width: 990px) {
   .nav-item test a:hover {
     color: #ffffff;
